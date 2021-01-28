@@ -1,2 +1,0 @@
-# firstwestleasing.github.io
-Firstwestleasing
