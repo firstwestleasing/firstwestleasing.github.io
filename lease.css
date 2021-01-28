@@ -1,3 +1,1812 @@
+/******************
+general tags
+******************/
+html, body, .mdi div, .mdi span, .mdi applet, .mdi object, .mdi iframe,
+.mdi h1, .mdi h2, .mdi h3, .mdi h4, .mdi h5, .mdi h6, .mdi p, .mdi blockquote, .mdi pre,
+.mdi a, .mdi abbr, .mdi acronym, .mdi address, .mdi big, .mdi cite, .mdi code,
+.mdi del, .mdi dfn, .mdi em, .mdi font, .mdi ins, .mdi kbd, .mdi q, .mdi s, .mdi samp,
+.mdi small, .mdi strike, .mdi strong, .mdi tt, .mdi var,
+.mdi dl, .mdi dt, .mdi dd, .mdi ol, .mdi ul, .mdi li,
+.mdi fieldset, .mdi form, .mdi label, .mdi legend, 
+.mdi caption, .mdi tbody, .mdi tfoot {
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	border-style: none;
+	font-size: 100%;
+	font-family: inherit;
+	vertical-align: baseline;
+}
+body .mdi,
+.mdi input, 
+.mdi select, 
+.mdi textarea,
+.mdi button{
+	font-size: 12px;
+	line-height: 1.2;
+}
+.mdi blockquote:before, .mdi blockquote:after,
+.mdi q:before, .mdi q:after {
+	content: "";
+}
+.mdi blockquote, q {
+	quotes: "" "";
+}
+.mdi a:hover{
+	text-decoration: none;
+}
+.mdi a img{
+	border: none;
+}
+.mdi img{
+	display: block; 
+	clear: both;
+	margin: 0;
+	padding: 0;
+	border-width: 0;
+	border-style: none;
+}
+.mdi p{
+	margin-bottom: 1em;
+}
+.mdi sup, /* fix for the line-height problem with sub and sup */
+.mdi sub{
+        position: relative;
+        vertical-align: 0;
+}
+.mdi sup{
+        bottom: 0.4em;
+}
+.mdi sub{
+        top: 0.4em;
+}
+.mdi h1, .mdi h2, .mdi h3, .mdi h4, .mdi h5, .mdi h6{
+	margin: 0 0 10px 0;
+	font-weight: bold;
+}
+.mdi h2, .mdi h3, .mdi h4, .mdi h5, .mdi h6{
+	margin: 14px 0 8px;
+}
+.mdi h1	{font-size: 18px;}
+.mdi h2	{font-size: 14px;}
+.mdi h3	{font-size: 13px;}
+.mdi h4	{font-size: 12px;}
+.mdi h5	{font-size: 11px;}
+.mdi h6	{font-size: 10px;}
+.mdi ol{
+	margin: 0 0 20px 0;
+	padding: 0 0 0 30px;
+	list-style-position: outside;
+}
+.mdi ul{
+	margin: 0 0 20px 8px;
+	padding: 0 0 0 10px;
+	list-style-position: outside;
+}
+.mdi li{
+	margin: 0 0 5px 0;
+}
+.mdi dl{
+	margin: 0 0 20px 0;
+	padding: 0;
+	list-style-type: none;
+}
+.mdi dt{
+	margin: 0 0 5px 0;
+}
+.mdi dd{
+	margin: 0 0 8px 20px;
+}
+
+/**/
+/*********************
+Layout
+***********************/
+div.outerHeader, 
+div.outerColContainer, 
+div.outerFooter{
+	text-align: center;
+}
+div.header, 
+div.colContainer,
+div.footer{
+	width: 760px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: left;
+}
+div.colContainer,
+div.header{
+	position: relative;/*not on footer cause of ie7 and show hides in online banking*/
+}
+div.colContainer{
+	display: block;
+	clear: both;
+}
+div.colOne{
+	width:675px;
+	float: left;
+	display: inline;
+	margin: 0px 4px 0 0;
+	min-height: 1em;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+div.colTwo{
+	width: 290px;
+	float: left;
+	display: inline;
+	margin-left: 4px;
+	min-height: 1em;
+	padding-bottom: 15px;
+}
+div.colThree{
+	width: 198px;
+
+	display: inline;
+	margin-right: 4px;
+	min-height: 1em;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+div.colOneTwo{
+	width: 550px;
+	float: left;
+	display: inline;
+	margin: 0 4px;
+	min-height: 1em;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+div.colTwoThree{
+	width: 598px;
+	float: left;
+	display: inline;
+	margin: 0 4px;
+	min-height: 1em;
+	padding-bottom: 15px;
+	overflow: hidden;
+}
+div.colOneTwoThree{
+	display: block;
+	margin: 0 4px;
+	padding-bottom: 15px;
+}
+div.footer{
+	clear: both;
+	display: block;
+	margin: 0;
+	padding: 5px 0;
+	margin-right: auto;
+	margin-left: auto;
+}
+/**********
+Layout variations
+***********/
+.Popup div.colContainer{
+	width: auto;
+	padding: 20px;
+}
+.Home div.colOneTwo{
+	width: 554px;
+}
+.Home div.colThree{
+	width: 194px;
+}
+.Online div.colOne{
+	width: 220px;
+	margin: 0 10px 0 0px;
+}
+.Online div.colTwoThree{
+	width: 520px;
+	margin: 0;
+}
+.Emt div.outerHeader div.header, 
+.Emt div.colContainer,
+.Emt div.footer{
+	width: 555px;
+}
+.Emt div.outerHeader div.header{	
+	border-bottom-style: solid;
+	border-bottom-width: 10px;
+	margin-bottom: 10px;
+}
+div.header{
+    height: 150px;
+    background-repeat: repeat-x;
+}
+div.footer{
+    background: url(../Furniture/dottedRule.gif) repeat-x 0 0;
+}
+div.colOneTwo{
+    margin-left: 0;
+}
+.Home div.colOneTwo{
+    width: 558px;
+    padding-bottom: 0;
+}
+.Home div.colThree{
+    width: 198px;
+    padding-bottom: 0;
+}
+div.colThree{
+    margin-right: 0;
+}
+/*************
+general tags
+**************/
+.mdi div.hr {
+	display:block;
+	clear:both;
+	height: 1px;
+	line-height: 1px;
+	font-size: 1px;
+	margin: 4px 0 12px;
+}
+.mdi div.hr hr {
+	display: none;
+}
+.mdi div.clear, 
+.mdi div.clearBoth,
+.mdi br.clearboth{
+	display: block;
+	clear: both;
+	height: 1px;
+	line-height: 1px;
+	font-size: 1px;
+}
+ul.skip{
+	font-size:1px;
+	position:absolute;
+	top:-9999px;
+}
+/*************
+Header
+**************/
+.header h1{
+	height: 75px;
+	width: 300px;
+	margin: 0;
+}
+/*this is also h2.sectionTitle*/
+.header h2{
+	margin: 0;
+	position: absolute;
+	z-index: 10;
+	top: 88px;
+	left: 10px;
+}
+.header .clear{
+	margin-top: -1px;
+}
+/*************
+Content Items
+**************/
+.contentTitle h1, 
+h1#PageTitle, 
+.mainContent h1,
+.Online .sfHead h2/*md sf forms*/,
+.Online .end h2/*md sf forms receipt*/{
+
+	clear: both;
+	display: block;
+	margin: 0px 0px 6px;
+	padding: 4px 0px 2px;
+	font-size: 18px;
+	font-weight:bold;
+}
+.Form h1#PageTitle{
+	font-size: 16px;
+	border: none;
+	padding-bottom: 0;
+}
+.Online h1#PageTitle,
+.Online .sfHead h2,
+.Online .end h2{/*to make room for the utility nav*/
+	margin: 0 0 6px 0;
+}
+sup.tm{/*french tm*/
+	font-size: 0.9em; 
+	vertical-align: super; 
+	text-transform: lowercase; 
+	font-variant: small-caps;
+}
+/*****
+Copy treatment (MDSB)
+******/
+div.highlight {
+    border-style: solid;
+    border-width: 1px;
+    margin-bottom: 20px;
+    padding: 10px 4px 6px 4px;
+}
+/*****
+Link treatment (MDSB)
+******/
+span.secondaryInfo,
+div.secondaryInfo{
+	font-size: 11px;
+}
+
+
+
+
+/********
+Inline Lists
+Default based on "add a payee"
+*********/
+ul.inline{
+	list-style-type: none; 
+	display: block;	
+	clear: both; 
+	margin: 0 0 12px 0;
+	padding: 0;
+}
+ul.inline li{
+	background: none;
+	padding: 0px 3px 0px 0px;	
+	margin: 0px;	
+	display: inline;
+}
+ul.inline li a{
+	padding: 0 1px;
+}
+/******
+Block DL
+Default based on "add a payee"
+*******/
+dl.block{
+	margin: 0px 0px 15px 0px;
+	padding: 0; 
+	display: block; 
+	clear: both;
+}
+dl.block dt{
+	font-weight: bold; 
+	display: block; 
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+}
+dl.block dd{
+	margin:0px 0px 2px 0px;
+	padding: 0px;
+}
+/*********
+document list
+*********/
+ul.documentlist{
+	margin:0;
+	padding:0;
+}
+ul.documentlist li{
+	display:block;
+	margin: 0 0 4px 0;
+	padding: 4px;
+	border-width: 1px;
+	border-style: solid;
+}
+ul.documentlist h5{
+	margin: -4px -4px 4px -4px;
+	padding:8px 4px 8px 38px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	background-position: 4px 50%;
+	background-repeat: no-repeat;
+	font-size: 13px;
+}
+/*******
+inside page .promo 
+Regression note: same class as homepage
+*******/
+/*promo(small) - minor - major*/
+.mdi .promo{
+	float: right;
+	margin: 0px 0px 4px;
+	position: relative;
+	width: 136px;
+}
+.mdi .promo br {
+	font-size: 1px;
+	line-height: 1px;
+	display: block;
+	clear: both;
+}
+.mdi .minor{
+	float: left;
+	width: 256px;
+}
+.minor .hd{
+	float: left;
+	width: 150px;
+}
+.mdi .major{
+	float: none;
+	width: 394px;
+}
+/*promo header and paragraph*/
+.promo h3{
+	padding: 4px;
+	margin: 0;
+}
+.promo p{
+	padding: 0px 4px 4px;
+	font-size: 11px;
+	margin: 0;
+}
+.minor p{
+	padding: 4px;
+}
+.major h3{
+	padding: 4px 8px;
+	margin: 0;
+}
+.major p{
+	font-size: 12px;
+	padding: 4px 8px;
+}
+/*promo cta*/
+.promo ul.calltoaction{
+	margin: 0px 0px 0px 14px;
+	padding: 4px 0px 0px 4px;
+}
+.major ul.calltoaction{
+	padding-left: 8px;
+}
+.collapsable{
+	display: block; 
+   clear: both;
+}
+/*.collapsable
+	.control
+	.collapsableContent*/
+.collapsable .control,
+.collapsableLevel2 .controlLevel2{
+	cursor:pointer;
+	text-decoration:underline;
+}
+.collapsable .control:hover,
+.collapsableLevel2 .controlLevel2:hover{
+	text-decoration:none;
+}
+/*if js enabled collapsed class is added*/
+.collapsed .collapsableContent,
+.collapsedLevel2 .collapsableContentLevel2{
+	display:none;
+}
+.collapsable .controlIcon,
+.collapsableLevel2 .controlIcon{
+	padding-left: 15px;
+}
+.hiddenInlineControl,
+.hiddenBlockControl{
+	display: none;
+}
+.javascript .hiddenBlockControl{
+	display: block;
+}
+.javascript .hiddenInlineControl{
+	display: inline;
+    font-weight: normal;
+    font-size: 11px;
+}
+.javascript .collapsable .showText,
+.javascript .collapsableLevel2 .showText{
+	display: none;
+}
+.javascript .collapsable .hideText,
+.javascript .collapsableLevel2 .hideText{
+	display: inline;
+}
+.javascript .collapsed .showText,
+.javascript .collapsedLevel2 .showText{
+	display: inline;
+}
+.javascript .collapsed .hideText,
+.javascript .collapsedLevel2 .hideText{
+	display: none;
+}
+/* If JavaScript enabled, hide these and let 'formShowHideControls.js' do the processing (MDSB: ON CT form) */
+.javascript div.formElementHide{
+	display: none;
+}
+/*******
+Alert
+********/
+.alert{
+	padding: 10px 10px 5px;
+	margin-bottom: 5px;
+	border-width: 1px;
+	border-style: solid;
+}
+/*******
+Image alignment (MDSB)
+********/
+.imgLeft{
+	float: left;
+    margin-right: 16px;
+}
+.imgRight{
+	float: right;
+    margin-left: 16px;
+}
+/*******
+Image and Caption (Tour Template)
+********/
+/*imageandcaption*/
+.imageandcaption .image{
+	display: block;
+	float: left;
+	margin:  3px 8px 8px 0;
+	padding: 0;
+}
+.imageandcaption .caption ul,
+.imageandcaption .caption ol{/*Fix the floating issues with lists*/
+	list-style-position:inside;
+	margin-left: 0px;
+	padding-left: 0px;
+}
+/*action links*/
+.imageandcaption .rightActionLinks{
+	float: right;
+	margin: 0 0 8px 0;
+}
+.imageandcaption .actionLinks ul{
+	list-style-image: none;
+	list-style-type: none;
+	margin: 0;
+}
+.imageandcaption .actionLinks ul li{
+	display: block;
+	float: left;
+	padding: 0 5px;
+	margin: 0;
+	background: url(../Navigation/globalmarker.gif) 0 3px no-repeat;
+}
+.imageandcaption .actionLinks ul li.link0{background-image: none;}
+/*paging controls*/
+.pagingControls{
+	display: block;
+	float:right;
+	margin: 0 5px 0 0;
+	clear: both;
+}
+.pagingControls .previous,
+.pagingControls .action,
+.pagingControls .next{
+	float: left;
+	font-weight: bold;
+	padding-right: 5px;
+}
+/*******
+Content Call to Action
+********/
+.contentCalltoaction{
+	background-position: 5px center;
+	background-repeat: no-repeat;
+	border: 1px solid;
+	padding: 10px 10px 10px 25px;
+}
+/*******
+Help
+********/
+.mdi .helpSelect{/*fixing the margin below the dropdown*/
+	margin: 0 0 10px 0;
+}
+
+/*******
+iPhone warning
+********/
+.mdi > div.outerWarning {
+    text-align:center;
+    border-width:5px;
+    border-style:solid none;
+}
+
+.mdi > div.outerWarning .warning{
+    width: 736px;
+    margin:0 auto;
+    padding: 12px;
+    text-align:right;
+}
+.mdi > div.outerWarning .warning *{
+    font-size:18px !important;
+}
+/*****
+JavaScript Items - don't work without JavaScript need to be hidden by default
+******/
+.calcTotalResult{
+	display: none;
+}
+.javascript .calcTotalResult{
+	display: table-footer-group;
+}
+/*******
+demos
+********/
+.mdi .flashDemos{
+	margin-bottom: 1em;
+}
+/*move logo*/
+.header h1{
+    width: 149px;
+    height: 82px;
+    position: absolute;
+    top: 28px;
+    right: 23px;
+}
+.header h2{
+    top: 118px;
+    width: 174px;
+}
+/*online banking custom footer*/
+.mdi .envisionBankingFooter{
+    margin-top: 17px;
+}
+.mdi .envisionBankingFooter td{
+    padding-left: 0;
+}
+.mdi .envisionBankingFooter,
+.mdi .envisionBankingFooter td,
+.mdi .envisionBankingFooter th{
+    border: none;
+}
+
+/*custom In This Section block*/
+.colTwo .envisionSectionBlock{
+    background: #E1E1E2 url(../Custom/bgCurveContent.gif) no-repeat bottom right;
+    padding-bottom: 13px;
+    margin-bottom: 22px;
+}
+.envisionSectionBlock h3{
+    background: url(../Custom/titleInThisSection.gif) no-repeat 0 0;
+    text-indent: -99999px;
+    height: 28px;
+    width: 394px;
+    margin-bottom: 8px;
+}
+.envisionSectionBlock ul{
+    margin: 0 0 0 22px;
+    padding: 0;
+    list-style-type: none;
+}
+.envisionSectionBlock li{
+    background: url(../Custom/bulletSection.gif) no-repeat 0 50%;
+    margin: 0;
+    padding: 2px 0 2px 15px;
+    line-height: 19px;
+}
+.envisionSectionBlock li a{
+    color: #333333;
+    text-decoration: none;
+}
+.envisionSectionBlock li a:hover{
+    text-decoration: underline;
+}
+/******************
+content tabs - regular and inverted
+******************/
+.mdi .contentTabsContainer,
+.mdi .contentTabsContainerFaked{
+	border-bottom-Style: solid;
+	border-bottom-width: 1px;
+	display: block;
+	float: left;
+	margin-bottom: 10px;
+	width: 100%;
+}
+.contentTabsContainer .contentTabs,
+.contentTabsContainerFaked .contentTabs{
+	border-bottom-Style: solid;
+	border-bottom-width: 1px;
+	display: none;/*Hide real tabs without JS*/
+	height: 22px;
+	list-style-position: outside;
+	list-style-type: none;
+	margin: 0 0 20px;
+	padding: 0;
+	width: 100%;
+}
+.contentTabsContainerFaked .contentTabs,/*Show fake tabs without JS*/
+.javascript .contentTabsContainer .contentTabs{/*Show real tabs with JS*/
+	display: block;
+}
+.contentTabsContainerFaked .contentTabHeader,
+.javascript .contentTabsContainer .contentTabHeader{/*Hide header for each tab with JS*/
+	display: none;
+}
+.contentTabs li{
+	display: block;
+	float: left;
+	height: 22px;
+	margin: 0 1px 0 0;
+	padding: 0;
+	position: relative;
+	top: 1px;
+}
+/*right side*/
+.contentTabs a{
+	background-position: right -66px;
+	background-repeat: no-repeat;
+	display: block;
+	font-weight: bold;
+	outline-style: none;
+	outline-width: 0;
+	overflow: show;
+	padding-right: 10px;
+	text-decoration: none;
+}
+/*left side*/
+.contentTabs span{
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 17px;
+	overflow: hidden;
+	padding-left: 10px;
+	padding-bottom: 2px;
+	padding-top: 3px;
+}
+/*current and current hover state for right side of tab*/
+.contentTabs .selected a,
+.contentTabs .selected a:hover{
+	background-position: right -110px;
+}
+/*current and current hover state for left side of tab*/
+.contentTabs .selected a span,
+.contentTabs .selected a:hover span{
+	background-position: 0px -44px;
+}
+/*hover state for right side of tab*/
+.contentTabs a:hover{
+	background-position: right -88px;
+}
+/*hover state for left side of tab*/
+.contentTabs a:hover span{
+	background-position: 0px -22px;
+}
+/* CSS Document */
+
+/**********
+nav adjacent
+***********/
+.header h2.adjacent{
+	margin: 0;
+	position: absolute;
+	z-index: 10;
+	top: 80px;
+	left: 10px;
+}
+.header h2.adjacent a {
+	background-position: 0em 0.45em;
+	background-repeat: no-repeat;
+	display: block;
+	font-size: 0.85em;
+	padding-left: 10px;
+}
+.header h2.adjacent{
+    font-size: 16px;
+    font-weight: normal;
+}   
+.header h2.adjacent a{
+    background-position: 0 -1px;
+    font-size: 11px;
+    padding-left: 20px;
+}
+.header h2.adjacent{
+    top: 108px;
+    width: 154px;
+}
+/*Personal-Business inside pages*/
+.header h2.adjacent ul{
+    list-style-type: none; 
+    padding-left: 0;
+    margin: 0;
+    float: left;
+}
+.header h2.adjacent li{
+    float: left;
+    display: block;
+    margin: 0;
+}
+/**********************
+global
+***********************/
+div.global{
+	position: absolute;
+	right: 5px;
+	top: 0px;
+}
+ul.global{
+    margin: 2px 0px 0px 0px;
+    padding: 0 4px 0 0;
+    text-align: left;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+	float: left;
+}
+ul.global li{
+    background-repeat: no-repeat;
+	background-position: 0 50%;
+    display : inline;
+    padding-left : 8px;
+    padding-right : 4px;
+}
+.Home ul.global li.name-home{
+	display: none;
+}
+ul.global li a{
+    text-decoration : none;
+}
+ul.global li a:hover{
+    text-decoration : underline;
+}
+
+div.global{
+    top: 5px;
+    clear: both;
+    right: 15px;
+}
+ul.global li a{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+/*Last global link*/
+ul.customLinkGlobal{
+    list-style-type: none; 
+    padding-left: 0;
+    margin: 2px 0 0 0;
+    float: left;
+}
+ul.customLinkGlobal li{
+    margin: 0 0 5px;
+    float: left;
+    padding: 0 8px;
+    display: inline;
+}
+ul.customLinkGlobal li a{
+    font-size: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #BF1E2E;
+    line-height: 1.5;
+}   
+div.breadcrumb {
+	height: 1%;
+	margin-bottom: 4px;
+}
+div.breadcrumb span{/*You are here text*/
+	display: none;
+}
+ul.breadcrumb{
+    font-weight : bold;
+    height : 1%;
+    margin : 0;
+    padding : 0;
+}
+html>body ul.breadcrumb{
+    height : auto;
+}
+ul.breadcrumb:after{
+	content: "."; 
+	display: block; 
+	height: 0; 
+	clear: both; 
+	visibility:hidden;
+}
+ul.breadcrumb li{
+    background-position : 0% 50%;
+    background-repeat : no-repeat;
+    display : block;
+    float : left;
+    margin: 0 0 0 5px;
+    padding : 5px 2px 5px 12px;
+    white-space: nowrap;
+}
+ul.breadcrumb li.link0{
+    background-image : none;
+    list-style : none;
+    margin-left : 0;
+    padding-left : 6px;
+}
+ul.breadcrumb li a{
+    font-weight : normal;
+}
+ul.breadcrumb li.self a{
+    font-weight : bold;
+    text-decoration : none;
+}
+div.breadcrumb{
+    margin-left: 4px;
+}   
+div.primary{
+    width: 100%;
+    clear: both;
+    display: block;
+    position: relative;
+    height: 40px;
+}
+ul.primary{
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: auto;
+}
+ul.primary li{
+	background-position: top left;
+	background-repeat: no-repeat;
+    display: block;
+    float: left;
+    font-weight: bold;
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+ul.primary li.current{
+	background-position: bottom left;
+}
+ul.primary li a{
+    display: block;
+    height: 35px;
+    padding: 5px 3px 0px 10px;
+    text-decoration: none;
+}
+ul.primary li a:hover{
+    text-decoration: underline;
+}
+div.primary{
+    position: absolute;
+    top: 108px;
+}
+ul.primary li {
+    text-indent: -99999px;
+    overflow: hidden;    
+}
+ul.primary li.link0{
+    background-image: url(../Navigation/customNavPrimary00.gif);
+    width: 77px;
+}
+ul.primary li.link1{
+    background-image: url(../Navigation/customNavPrimary01.gif);
+    width: 146px;
+}
+ul.primary li.link2{
+    background-image: url(../Navigation/customNavPrimary02.gif);
+    width: 84px;
+}
+ul.primary li.link3{
+    background-image: url(../Navigation/customNavPrimary03.gif);
+    width: 78px;
+}
+ul.primary li.link4{
+    background-image: url(../Navigation/customNavPrimary04.gif);
+    width: 167px;
+}
+/*secondary*/
+div.secondary{
+	position:absolute;
+	right:8px;
+	top:50px;
+}
+ul.secondary{
+   margin : 0;
+ 	padding: 0;
+}
+ul.secondary li{
+    display : block;
+    float: left;
+    list-style : none;
+    padding-left : 4px;
+}
+ul.secondary li a{
+    background-position : 0px 0px;
+    background-repeat : no-repeat;
+    display : block;
+    height : 15px;
+    padding-bottom : 2px;
+    padding-left : 0px;
+    padding-top : 2px;
+    text-align : center;
+    text-decoration : none;
+    vertical-align : middle;
+    width : 104px;
+	font-size: 11px;
+}
+ul.secondary li a:hover,
+ul.secondary li.current a{
+    background-position : 0px -19px;
+}
+ul.secondary li a:hover{
+    text-decoration : underline;
+}
+/**/
+/*********************
+Online Banking Tabs
+**********************/
+ul.online{
+	background-position : bottom left;
+	background-repeat : no-repeat;
+	background-color : #fff;
+	clear : both;
+	height : 21px;
+	margin : -4px 0 10px 0;/*-4 because of breadcrumb bottom margin*/
+	padding : 8px 0 0 230px;
+	z-index : 100;
+}
+ul.online li{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	height: 21px;
+	width: 106px;
+	overflow: hidden;
+}
+ul.online a{
+	background-image : url(../Navigation/online_106.gif);
+	background-position: 0 0;
+	display : block;
+	font-weight : bold;
+	padding-bottom : 3px;
+	padding-top : 4px;
+	text-align : center;
+	text-decoration : none;
+	width : 100%;
+}
+ul.online li a:hover{
+	background-position: 0 -21px
+}
+ul.online li.current a, 
+ul.online li.current a:hover{
+	background-position: 0 -42px
+}
+/*end online tabs*/
+/**/
+div.context{
+	margin-bottom: 8px;
+	width:186px;
+}
+ul.context{
+    border-width: 1px;
+	border-style: solid;
+    margin : 0;
+    padding : 0; 
+	overflow : hidden;
+    width : 148px;
+}
+ul.context li{
+    background-position : 2px 6px;
+    background-repeat : no-repeat;
+    border-bottom-width: 1px;
+	border-bottom-style: solid;
+    display : block;
+	clear: both;
+    font-weight : bold;
+    height : auto;
+    list-style : none;
+    margin : 0;
+    padding : 4px 4px 4px 20px;
+    text-align : left;
+    width : 124px;
+	list-style-position: outside;
+	font-size: 14px;
+}
+ul.context li.linkN{
+	border-bottom: none;
+}
+ul.context li a{
+    height : auto;
+    text-align : left;
+}
+ul.context li.self a{
+    font-weight : bold;
+}
+ul.context li.self li a{
+    font-weight : normal;
+}
+ul.context .depth1{
+    border-top-width: 1px;
+	border-top-style: solid;
+    margin : 4px -4px -4px -20px;
+    padding : 0;
+}
+ul.context .depth1 li{
+    background-position : 10px 6px;
+    background-repeat : no-repeat;
+    border : none;
+    font-weight : normal;
+    margin : 0;
+    padding : 2px 2px 2px 20px;
+    width: auto;
+	font-size: 12px;
+}
+ul.context .depth2{
+    margin : 4px -4px -2px -20px;
+    padding : 0;
+}
+ul.context .depth2 li{
+    background-position : 15px 6px;
+    background-repeat : no-repeat;
+    border : none;
+    font-weight : normal;
+    margin : 0;
+    padding : 2px 2px 2px 25px;
+	width: auto;
+}
+ul.context .depth3{
+    margin : 4px 0px 0px -25px;
+    padding : 0;
+}
+ul.context .depth3 li{
+    background-position : 20px 4px;
+    background-repeat : no-repeat;
+    border : none;
+    font-weight : normal;
+    margin : 0;
+    padding : 2px 0 2px 30px;
+	width: auto;
+}
+ul.context .depth4{
+    margin : 4px 0px 0px -30px;
+    padding : 0;
+}
+ul.context .depth4 li{
+    background-position : 27px 4px;
+    background-repeat : no-repeat;
+    border : none;
+    font-weight : normal;
+    margin : 0 12px 0 0;
+    padding : 2px 0px 2px 36px;
+	width: auto;
+}
+
+/**/
+/**********************
+global
+***********************/
+div.footer br{
+	display: block;
+	clear: both;
+}
+ul.footer{
+	display: inline;
+	float: left;
+	margin: 0 0 0 5px;
+	padding: 0;
+
+}
+ul.footer li{
+	border-width: 1px;
+	border-style: solid;
+	display: inline;
+	float: left;
+	margin: 2px;
+}
+ul.footer li a{
+	display: block;
+	float: left;
+	padding: 5px;
+	text-decoration: none;
+}
+ul.footer li a:hover{
+	text-decoration:underline;
+}
+/*spacing for bullets*/
+ul.footer li a{
+    font-size: 10px;
+    text-transform: uppercase;
+}
+ul.footer li{
+    padding-left: 4px;
+    padding-right: 16px;
+    background: url(../Navigation/footerBullet.gif) no-repeat 100% 50%;
+}
+ul.footer li.linkN{
+    background: none;
+}
+
+.mdi ul.lang{
+    margin : 2px 0px 0px 0px;
+   	padding: 0 4px 0 0;
+    text-align : left;
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+	float: left;
+}
+ul.lang li{
+    background-repeat: no-repeat;
+	background-position: 0 50%;
+    display : inline;
+    padding-left : 8px;
+    padding-right : 4px;
+}
+ul.lang li.current{
+	display: none
+}
+ul.lang li a{
+    text-decoration : none;
+}
+ul.lang li a:hover{
+    text-decoration : underline;
+}
+
+
+/**/
+/**********************
+topic
+***********************/
+ul.topic{
+    margin: 4px 0 16px 0;
+    padding: 0;
+    text-align: left;
+}
+ul.topic li{
+    background-repeat: no-repeat;
+    background-position: 0% 50%;
+    display : inline;
+    margin: 0 0 5px;
+    padding: 0 4px 0 5px;
+}
+ul.topic li.link0{
+    background-image: none;
+    padding-left: 0;    
+}
+ul.topic li a{
+    text-decoration : underline;
+}
+ul.topic li a:hover{
+    text-decoration : none;
+}
+ul.topic ul{
+    display: inline;
+    margin: 0 0 0 4px;
+    padding: 0;
+}
+ul.topic ul li{
+    background-image: none;
+    padding: 0 2px 0 0;
+}
+/* CSS Document */
+
+/********
+Search Forms
+note: not using .locator because it also affects the search
+*********/
+div.atm{
+	border-width: 1px;
+	border-style: solid;
+	margin: 16px 0px 4px;
+	padding: 0px;
+	display: block;
+	float: left;
+}
+/********
+Search Forms Header
+*********/
+.atm .head{
+	display: block;
+	float: left;
+	padding: 4px 4px 0px 4px;
+	margin: 0px 0px 8px 0px;
+	position: relative;
+	width: 384px;
+}
+.atm .head h2{
+	float: left;
+	font-size: 12px;
+	margin: 0px;
+	padding: 0px 0px 4px 0px;
+	width: 250px;
+}
+.atm .head ul.calltoaction{
+	clear: none;
+	float: right;
+	text-align: right;
+	width: 130px;
+	display: block;
+	margin: 0px;
+	padding: 0px 0px 4px 0px;
+}
+.atm .head ul.calltoaction li{
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+	text-align: right;
+	background-color: transparent;
+	font-size: 10px;
+}
+/********
+Search Forms Form
+*********/
+.atm form{
+	margin: 0px 4px 4px;
+	padding: 0px;
+	clear: both;
+	display: block;
+}
+.atm form div{
+	clear: both;
+	display: block;
+	margin: 0px 4px 8px 0px;
+}
+.atm form label {
+	display: block;
+	float: left;
+	font-weight: bold;
+	margin: 0pt;
+	padding: 0px;
+	width: 120px;
+}
+.atm div.submit{
+	clear: both;
+	display: block;
+	float: none;
+	margin: 0px 0px 0px 120px;
+	padding: 0px 0px 4px;
+	width: auto;
+}
+/*********
+Results div.foot cta
+**********/
+.atm .foot ul.calltoaction {
+	margin: 0pt;
+	padding: 0pt;
+	clear: both;
+	display: block;
+}
+.atm .foot ul.calltoaction li{
+	margin: 0px;
+	padding: 2px;
+	list-style-type: none;
+}
+.atm .foot{
+	font-size: 10px;
+}
+/**********
+Results
+.group is the result containing div
+.group.self and .group.other are also available
+***********/
+.atm .group{
+	display: block;
+	clear: both;
+	margin-bottom: 16px;
+}
+.atm h2{/*main header. 1 in each .group*/
+	padding: 0px 4px;
+}
+.atm ul{/*the results are in a list*/
+	margin: 0;
+	padding: 0;
+	display: block;
+	clear: both;
+}
+.atm ul li{
+	margin: 0;
+	padding: 1px 0px;
+	list-style: none;
+}
+.atm .address{
+	padding: 5px; 
+}
+.atm h5 {/*cu name in individual results*/
+	margin: 0px;
+	padding: 4px 0px 8px;
+	font-size: 12px;
+}
+/*.other is found in find atms of others*/
+.atm .other h5{
+	padding: 4px;
+}
+.atm .other ul ul{/*the results of branch other are in a list*/
+	margin-bottom: 15px;
+}
+/******************
+NOTE: All searches and results use .atm as a class except the Branch details it uses .branch
+******************/
+.branch .head{
+	float: left;
+}
+.branch .head h2{
+	float: left;
+	display: block;
+	width: 285px;
+}
+.branch .head a{
+	float: right;
+	font-size: 11px;
+}
+.branch .details{
+	display: block;
+	clear: both;
+}
+.details .section{
+	margin-bottom: 20px;
+}
+.branch h5{
+	font-size: 12px;
+}
+.branch .address{
+	display: block;
+	margin-bottom: 12px;
+}
+
+/**/
+ul.sitemap{
+	margin: 0px;
+	padding: 0px;
+	width: 192px;
+	float: left;
+}
+ul.smleft{
+	clear: left;
+}
+ul.sitemap li{
+	display: block;
+	margin: 6px 2px 0px 0px;
+	padding: 0px;
+	list-style: none;
+}
+ul.sitemap li a{
+	font-weight: bold;
+}
+ul.sitemap ul{
+	margin: 6px 0 12px 0;
+	padding: 0;
+}
+ul.sitemap ul li{
+	list-style-position: outside;
+	list-style-type:disc;
+	display: list-item;
+	margin: 0px 0px 0px 20px;
+	padding: 1px 0px;
+	width: auto;
+}
+ul.sitemap ul li a{
+	font-weight: normal;
+}
+/**/
+/******************
+Old Search
+******************/
+
+/*********
+Search Form
+**********/
+div.search{
+    margin:16px 0pt 4px;
+    padding:0pt;
+}
+.search form{
+    margin:8px 0px 4px;
+    padding: 0pt;
+    clear: both;
+    display: block;
+}
+.search label{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 4px;
+}
+.search .submit{
+    margin-bottom: 18px;
+    padding-top: 4px;
+    width: auto;
+}
+/*********
+Search Results
+**********/
+.search thead th{
+    text-align: left;
+}
+.mdi .search table, 
+.mdi .search th,
+.mdi .search td{
+    border: none;
+}
+.search td,
+.search th{
+    padding: 4px;
+}
+.search h5{/*tile of the result*/
+    font-size: 12px;
+    margin: 0px 0px 4px 0px;
+    padding: 0;
+}
+.search div.des{/*container of h6 and breadcrumb*/
+    padding-bottom: 4px;
+}
+.search h6{/*breadcrumb header: Category*/
+    display: inline;
+    font-weight: bold;
+    height: auto;
+    margin: 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+/*********
+Search Results Breadcrumb
+**********/
+.search ul.breadcrumb{
+    background-color: transparent;
+    background-image: none;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+.search td.description ul.breadcrumb li{
+    background-color:transparent;
+    background-image:none;
+    display:inline;
+    float: none;
+    margin: 0px;
+    padding:0px 0px 0px 4px;
+}
+/************
+Pagination
+************/
+.search ul.pager{
+    display: block; 
+    clear: both; 
+    margin: 0 0 4px 0; 
+    padding:0
+}
+.search ul.pager li{
+    background-image: none; 
+    list-style: none; 
+    display: inline; 
+    margin: 0; 
+    padding: 0 2px
+}
+.search ul.pager li.currentPage a{
+    text-decoration: none
+}
+
+/******************
+New Search
+******************/
+
+.searchResults ul.pagination{
+    position:relative;
+    display:block;
+    width: 100%;
+    margin:12px 0 4px;
+    padding:8px 0 0 0;
+    clear:both;
+}
+.searchResults .pagination:after{
+    clear : both;
+    display : block;
+    content : ".";
+    height : 0;
+    visibility : hidden;
+}
+* html .searchResults .pagination {
+    height: 1%;
+}
+
+.searchResults ul.initial{
+    border-top-width: 1px;
+    border-top-style: solid;
+}
+.searchResults ul.pagination li{
+    display:inline;
+}
+
+.searchResults ul.pagination li a{
+    padding: 4px;
+}
+.searchResults ul.pagination li.disabled a{
+    text-decoration:none;
+} 
+.searchResults ul.simple li{
+    display:block;
+    float:left;
+}
+.searchResults ul.simple li.next{
+    float:right;
+}
+
+.searchResults ul.standard{
+    text-align:right;
+}
+
+.searchResults ul.full{
+    text-align:center;
+}
+
+.searchResults .summary .spellCorrected,
+.searchResults .summary .rawQuery{
+    font-weight:bold;
+}
+.searchResults .summary .spellCorrected a{
+    font-weight:normal;
+}
+.searchResults ul.results {
+    float: left;
+    clear: both;
+    margin: 0 0 5px 0;
+    padding: 0 0 0 0;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    width:100%;
+}
+.searchResults ul.results li {
+    display: block;
+    margin: 0;
+    padding: 10px 0;
+    border-top-width: 1px;
+    border-top-style: solid;
+    clear: both;
+    list-style-image: none;
+    list-style: none;
+    float: left;
+    background-image: none;
+    width:100%;
+}
+.searchResults ul.results li .num {
+    width: 25px;
+    float: left;
+    padding: 0 5px;
+}
+.searchResults ul.results li .result {
+    width: 350px;
+    float: left;
+}
+.searchResults ul.results li .result h2{
+    margin:0;
+    padding:0;
+    font-size:1em;
+}
+.searchResults ul.results li .result p {
+    margin: 9px 0 0 0 ;
+}
+.searchResults ul.results li .result strong {
+    font-weight: normal;
+}
+.searchResults ul.results li .result p.link {
+    margin: 0;
+}
+.searchResults ul.results li .result ul.passages {
+    margin: 9px 0;
+    padding: 0;
+    color: #666;
+}
+.searchResults ul.results li .result ul.passages li {
+    display:block;
+    margin: 0 0 5px 0;
+    padding:0;
+    width:auto;
+    border-style:none;
+    font-size:inherit;
+}
+.searchResults form.search{
+    margin:8px 0px;
+    padding:8px 0px;
+    position:relative;
+    border-style: none;
+}
+.searchResults form.search h3 {
+    margin:0 0 8px 0;
+    display:none;
+}
+.searchResults form.search .note {
+    padding:8px 0;
+}
+.searchResults form.search .field { 
+    float:left;
+    padding-bottom:4px;
+}
+.searchResults form.search .field label{
+    padding: 0 8px 0 0;
+    display: none;
+}
+.searchResults form.search .field .input{
+    display:inline;
+}
+.searchResults form.search .field .input input {
+  width:270px;
+}
+.searchResults form.search .submit {
+  float:left;
+  padding:0 0 0 6px;
+}
+.noQuery form.search,
+.searchResults form.collapsable{
+    border-style:none;
+}
+.searchResults form.collapsable h3{
+    text-decoration: underline;
+    cursor: pointer;
+}
+.searchResults form.search .fields:after,
+.searchResults ul.results:after,
+.searchResults ul.results li:after{
+    clear : both;
+    display : block;
+    content : ".";
+    height : 0;
+    visibility : hidden;
+}
+* html  form.search .fields,
+* html div ul.results,
+* html div ul.results li {
+    height: 1%;
+}
+/**/
+
+.dummyrule{margin: 0}
+
+
+
+/* NOTE: this is based on the general envisionfinancial.cs styles, */
+/* but contains only what's needed for the Tent app                */
+
+
+/* General Styles */
+	
+body	{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	color: #000;
+	font: 11px verdana, geneva, arial, helvetica, helve, sans-serif;
+	background-color:#ffffff;
+	}
+
+p, li, blockquote, input, select, textarea, td{
+	font-size: 11px;
+	font-family: verdana, geneva, arial, helvetica, helve, sans-serif;
+	color: #000;
+	}
+
+/* Link Styles */
+a:link {color: #004677; text-decoration: underline;}
+a:visited {color: #004677; text-decoration: underline;}
+a:active {color: #004677; text-decoration: none;}
+a:hover {color: #004677; text-decoration: underline;}
+
+a.footer:link {color: #004677; text-decoration: none; font-Size: 11px;}
+a.footer:visited {color: #004677; text-decoration: none; font-Size: 11px;}
+a.footer:active {color: #004677; text-decoration: none; font-Size: 11px;}
+a.footer:hover {color: #004677; text-decoration: underline; font-Size: 11px;}
+
+a.more:link {color: #C80752; text-decoration: none;}
+a.more:visited {color: #C80752; text-decoration: none;}
+a.more:active {color: #C80752; text-decoration: none;}
+a.more:hover {color: #C80752; text-decoration: underline}
+
+a.support:link {color: #000; text-decoration: none;}
+a.support:visited {color: #000; text-decoration: none;}
+a.support:active {color: #000; text-decoration: none;}
+a.support:hover {color: #000; text-decoration: underline}
+
+/* Layout Styles */
+	
+#contentCol2{
+	width: 558px; 
+	float: left;
+	/*padding: 2px; ie5win fudge begins */
+	voice-family: "\"}\"";
+	voice-family:inherit;
+
+	}
+	
+.leftNavLink
+{
+	font-size:12px;font-weight:bold;text-decoration:none;color:#4F4F4F;
+}
+
+.leftNavLink:link {	text-decoration:none;}
+.leftNavLink:hover {	text-decoration:none;}
+.leftNavLink:active {	text-decoration:none;}
+.leftNavLink:visited {	text-decoration:none;}
+
 /* General Styles */
 	
 body	{
